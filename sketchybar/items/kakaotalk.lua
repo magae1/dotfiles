@@ -25,24 +25,11 @@ kakaotalk:subscribe({ "routine", "workspace_change" }, function()
                 -- Extract label using pattern matching
                 local label_match = status_info:match('"label"="([^"]*)"')
 
-                if label_match then
-                        label = label_match
-
-                        -- Determine icon color based on KakaoTalk status
-                        if label == "" then
-                                icon_color = colors.green -- No notifications
-                        elseif label == "•" then
-                                icon_color = colors.yellow -- Unread messages
-                        elseif label:match("^%d+$") then
-                                icon_color = colors.red -- Specific number of notifications
-                        else
-                                -- Unexpected status, don't update
-                                return
-                        end
-                else
-                        -- No valid status found
-                        return
-                end
+                if not label_match then
+                        label = "0"
+		else
+			label = label_match
+		end
 
                 kakaotalk:set({
                         icon = {
