@@ -15,7 +15,7 @@ volume_slider=(
 
 volume_icon=(
   click_script="$PLUGIN_DIR/volume_click.sh"
-  padding_left=10
+  padding_left=0
   padding_right=0
   icon=$VOLUME_100
   icon.width=0
@@ -27,11 +27,6 @@ volume_icon=(
   label.font="$FONT:Regular:14.0"
 )
 
-status_bracket=(
-  background.color=$BACKGROUND_1
-  background.border_color=$BACKGROUND_2
-  background.border_width=2
-)
 
 sketchybar --add slider volume right            \
            --set volume "${volume_slider[@]}"   \
@@ -43,5 +38,3 @@ sketchybar --add slider volume right            \
            --add item volume_icon right         \
            --set volume_icon "${volume_icon[@]}"
 
-sketchybar --add bracket status brew github.bell volume_icon \
-           --set status "${status_bracket[@]}"

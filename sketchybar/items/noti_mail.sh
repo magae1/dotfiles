@@ -3,7 +3,8 @@ mail=(
   icon.font="$FONT:Bold:20.0"
   icon.color=$MAGENTA
   label=$LOADING
-  label.color=$MAGENTA
+  padding_left=10
+  padding_right=3
   update_freq=60
   script="$PLUGIN_DIR/noti_mail.sh"
 )

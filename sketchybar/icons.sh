@@ -91,9 +91,12 @@ ICON_REMOTEDESKTOP=󰢹 # remote desktop, vmware, utm
 ICON_CLOCK=󰥔 # clock, timewarrior, tty-clock
 ICON_CALENDAR=󰃭 # calendar
 
-ICON_WIFI=󰖩
-ICON_WIFI_OFF=󰖪
-ICON_VPN=󰦝 # vpn, nordvpn
+
+ICON_HOTSPOT=􀉤
+ICON_WIFI=􀙇
+ICON_WIFI_OFF=􀙈
+ICON_VPN=󰒘 # vpn, nordvpn
+
 
 ICONS_VOLUME=(󰸈 󰕿 󰖀 󰕾)
 

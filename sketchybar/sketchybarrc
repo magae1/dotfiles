@@ -62,7 +62,9 @@ defaults=(
 sketchybar --default "${defaults[@]}"
 
 # Left
-source "$ITEM_DIR/apple.sh"
+source "$ITEM_DIR/cpu.sh"
+source "$ITEM_DIR/ram.sh"
+source "$ITEM_DIR/ip_address.sh"
 source "$ITEM_DIR/spaces.sh"
 source "$ITEM_DIR/front_app.sh"
 
@@ -74,10 +76,20 @@ source "$ITEM_DIR/calendar.sh"
 source "$ITEM_DIR/brew.sh"
 source "$ITEM_DIR/github.sh"
 source "$ITEM_DIR/noti_mail.sh"
-source "$ITEM_DIR/ip_address.sh"
 source "$ITEM_DIR/battery.sh"
 source "$ITEM_DIR/volume.sh"
-source "$ITEM_DIR/cpu.sh"
+source "$ITEM_DIR/caffeinate.sh"
+
+
+bracket=(
+  background.color=$BACKGROUND_1
+  background.border_color=$BACKGROUND_2
+  background.border_width=2
+)
+
+sketchybar --add bracket notifications brew github.bell mail \
+           --set notifications "${bracket[@]}" 
+
 
 # Forcing all item scripts to run (never do this outside of sketchybarrc)
 sketchybar --update
