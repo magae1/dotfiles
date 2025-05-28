@@ -61,7 +61,7 @@ BORDERS=(
 
 LAYOUT=(
 	layout bsp
-	top_padding 3
+	top_padding 8
 	bottom_padding 3
 	left_padding 3
 	right_padding 3
