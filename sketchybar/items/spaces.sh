@@ -37,7 +37,7 @@ done
 spaces=(
   background.color=$BACKGROUND_1
   background.border_color=$BACKGROUND_2
-  background.border_width=0
+  background.border_width=3
   background.drawing=on
 )
 
@@ -45,8 +45,8 @@ spaces=(
 separator=(
   icon=􀆊
   icon.font="$FONT:Heavy:16.0"
-  padding_left=15
-  padding_right=15
+  padding_left=6
+  padding_right=6
   label.drawing=off
   associated_display=active
   click_script='yabai -m space --create && sketchybar --trigger space_change'

@@ -1,8 +1,8 @@
 battery=(
   update_freq=300
-  label.font="$FONT:Heavy:12"
-  icon.font="$FONT:Bold:16.0"
-  icon.color=$YELLOW
+  icon.font="$FONT:Bold:17.5"
+  icon.color=$WHITE
+  icon.y_offset=1
   script="$PLUGIN_DIR/battery.sh"
 )
 

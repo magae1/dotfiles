@@ -1,6 +1,8 @@
 memory=(
   label.font="$FONT:Heavy:12"
   label.color=$WHITE
+  label.width=35
+  label.align=right
   icon=$ICON_RAM
   icon.font="$FONT:Bold:16.0"
   icon.color=$GREEN

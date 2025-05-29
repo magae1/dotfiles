@@ -1,6 +1,6 @@
 #!/bin/sh
 
-STATUS_LABEL=$(lsappinfo info -only StatusLabel "Mail")
+STATUS_LABEL=$(lsappinfo info -only StatusLabel "KakaoTalk")
 LABEL=""
 
 if [ -z "$STATUS_LABEL" ]; then

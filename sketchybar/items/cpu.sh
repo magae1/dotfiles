@@ -12,9 +12,11 @@ cpu_top=(
 cpu_percent=(
   icon=$ICON_CPU
   icon.color=$RED
-  label.font="$FONT:Heavy:12"
+  icon.font="$FONT:Bold:16.0"
+  label.font="$FONT:Heavy:12.0"
   label=CPU
-  width=56
+  label.width=35
+  label.align=right
   update_freq=2
   mach_helper="$HELPER"
 )
