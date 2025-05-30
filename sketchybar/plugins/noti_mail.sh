@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/bin/bash
 
 STATUS_LABEL=$(lsappinfo info -only StatusLabel "Mail")
 LABEL=""

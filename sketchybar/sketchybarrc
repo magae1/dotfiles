@@ -20,18 +20,12 @@ launchctl unload -F /System/Library/LaunchAgents/com.apple.OSDUIHelper.plist > /
 
 # Setting up the general bar appearance of the bar
 bar=(
-  height=39
-  color=$BAR_COLOR
-  shadow=on
+  height=48
+  color=0x00000000
   position=top
   sticky=on
-  padding_right=10
-  padding_left=10
-  corner_radius=9
-  y_offset=3
-  margin=5
-  blur_radius=20
-  notch_width=0
+  padding_right=8
+  padding_left=8
 )
 
 sketchybar --bar "${bar[@]}"
@@ -39,7 +33,7 @@ sketchybar --bar "${bar[@]}"
 # Setting up default values
 defaults=(
   updates=when_shown
-  icon.font="$FONT:Bold:14.0"
+  icon.font="$FONT:Black:16.0"
   icon.color=$ICON_COLOR
   icon.padding_left=$PADDINGS
   icon.padding_right=$PADDINGS
@@ -49,7 +43,7 @@ defaults=(
   label.padding_right=$PADDINGS
   padding_right=$PADDINGS
   padding_left=$PADDINGS
-  background.height=30
+  background.height=42
   background.corner_radius=9
   popup.background.border_width=2
   popup.background.corner_radius=9
@@ -61,34 +55,58 @@ defaults=(
 
 sketchybar --default "${defaults[@]}"
 
+
+# Setting up the bracket values
+bracket=(
+  background.height=36
+  background.color=$BAR_COLOR
+  background.border_color=$BAR_BORDER_COLOR
+  background.border_width=1
+  background.corner_radius=9
+)
+
+# Setting up the gap values
+gap=(
+  padding_left=2
+  padding_right=2
+  background.drawing=off
+  icon.drawing=off
+  label.drawing=off
+)
+
+
 # Left
-source "$ITEM_DIR/cpu.sh"
-source "$ITEM_DIR/ram.sh"
-source "$ITEM_DIR/network.sh"
+source "$ITEM_DIR/apple.sh"
+sketchybar --add item gap.l1 left \
+	   --set gap.l1 "${gap[@]}"
+
 source "$ITEM_DIR/spaces.sh"
-source "$ITEM_DIR/front_app.sh"
+sketchybar --add item gap.l2 left \
+	   --set gap.l2 "${gap[@]}"
+
+source "$ITEM_DIR/activity.sh"
+sketchybar --add item gap.l3 left \
+	   --set gap.l3 "${gap[@]}"
+
+source "$ITEM_DIR/caffeinate.sh"
 
 # Center
 source "$ITEM_DIR/spotify.sh"
 
 # Right
 source "$ITEM_DIR/calendar.sh"
-source "$ITEM_DIR/battery.sh"
-source "$ITEM_DIR/brew.sh"
-source "$ITEM_DIR/github.sh"
-source "$ITEM_DIR/noti_mail.sh"
-source "$ITEM_DIR/noti_kakaotalk.sh"
-source "$ITEM_DIR/volume.sh"
-source "$ITEM_DIR/caffeinate.sh"
+sketchybar --add item gap.r1 right \
+	   --set gap.r1 "${gap[@]}"
 
-bracket=(
-  background.color=$COLOR_BLACK
-  background.border_color=$BACKGROUND_2
-  background.border_width=3
-)
+source "$ITEM_DIR/status.sh"
+sketchybar --add item gap.r2 right \
+	   --set gap.r2 "${gap[@]}"
 
-sketchybar --add bracket notifications kakaotalk brew github.bell mail battery \
-           --set notifications "${bracket[@]}" 
+source "$ITEM_DIR/notification.sh"
+sketchybar --add item gap.r3 right \
+           --set gap.r3 "${gap[@]}"
+
+source "$ITEM_DIR/network.sh"
 
 
 # Forcing all item scripts to run (never do this outside of sketchybarrc)

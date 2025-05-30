@@ -14,6 +14,7 @@ do
   space=(
     associated_space=$sid
     icon=${SPACE_ICONS[i]}
+    icon.font="$FONT:Bold:14.0"
     icon.padding_left=10
     icon.padding_right=15
     padding_left=2
@@ -34,27 +35,6 @@ do
              --subscribe space.$sid mouse.clicked
 done
 
-spaces=(
-  background.color=$BACKGROUND_1
-  background.border_color=$BACKGROUND_2
-  background.border_width=3
-  background.drawing=on
-)
-
-
-separator=(
-  icon=􀆊
-  icon.font="$FONT:Heavy:16.0"
-  padding_left=6
-  padding_right=6
-  label.drawing=off
-  associated_display=active
-  click_script='yabai -m space --create && sketchybar --trigger space_change'
-  icon.color=$WHITE
-)
 
 sketchybar --add bracket spaces '/space\..*/' \
-           --set spaces "${spaces[@]}"        \
-                                              \
-           --add item separator left          \
-           --set separator "${separator[@]}"
+           --set spaces "${bracket[@]}"
