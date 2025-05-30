@@ -3,8 +3,10 @@
 ram=(
   icon=$ICON_RAM
   icon.color=$GREEN
-  label.width=35
+  icon.padding_right=0
+  label.width=30
   label.align=right
+  label.padding_left=0
   update_freq=15
   script="$PLUGIN_DIR/ram.sh"
 )

@@ -6,7 +6,7 @@ source "$HOME/.config/sketchybar/icons.sh" # Loads all defined icons
 ITEM_DIR="$HOME/.config/sketchybar/items" # Directory where the items are configured
 PLUGIN_DIR="$HOME/.config/sketchybar/plugins" # Directory where all the plugin scripts are stored
 
-FONT="SF Pro" # Needs to have Regular, Bold, Semibold, Heavy and Black variants
+FONT="JetBrainsMono Nerd Font" # Needs to have Regular, Bold, Semibold, Heavy and Black variants
 PADDINGS=3 # All paddings use this value (icon, label, background)
 
 # Setting up and starting the helper process
@@ -24,8 +24,8 @@ bar=(
   color=0x00000000
   position=top
   sticky=on
-  padding_right=8
-  padding_left=8
+  padding_right=5
+  padding_left=5
 )
 
 sketchybar --bar "${bar[@]}"
@@ -80,17 +80,14 @@ source "$ITEM_DIR/apple.sh"
 sketchybar --add item gap.l1 left \
 	   --set gap.l1 "${gap[@]}"
 
-source "$ITEM_DIR/spaces.sh"
+source "$ITEM_DIR/activity.sh"
 sketchybar --add item gap.l2 left \
 	   --set gap.l2 "${gap[@]}"
 
-source "$ITEM_DIR/activity.sh"
+source "$ITEM_DIR/caffeinate.sh"
 sketchybar --add item gap.l3 left \
 	   --set gap.l3 "${gap[@]}"
 
-source "$ITEM_DIR/caffeinate.sh"
-
-# Center
 source "$ITEM_DIR/spotify.sh"
 
 # Right
@@ -103,10 +100,7 @@ sketchybar --add item gap.r2 right \
 	   --set gap.r2 "${gap[@]}"
 
 source "$ITEM_DIR/notification.sh"
-sketchybar --add item gap.r3 right \
-           --set gap.r3 "${gap[@]}"
 
-source "$ITEM_DIR/network.sh"
 
 
 # Forcing all item scripts to run (never do this outside of sketchybarrc)

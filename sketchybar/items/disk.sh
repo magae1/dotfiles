@@ -4,8 +4,10 @@ disk=(
   padding_right=8
   icon=$ICON_DISK
   icon.color=$BLUE
-  label.width=35
+  icon.padding_right=0
+  label.width=30
   label.align=right
+  label.padding_left=0
   script="$PLUGIN_DIR/disk.sh"
 )
 
