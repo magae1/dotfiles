@@ -1,5 +1,3 @@
 # dotfiles
 
-## sketchybar
-
-![sketchybar](./assets/bar.png)
+![screenshot](./assets/screenshot.png)
