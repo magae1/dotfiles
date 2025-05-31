@@ -34,6 +34,7 @@ mail=(
   label=$LOADING
   update_freq=45
   script="$PLUGIN_DIR/noti_mail.sh"
+  click_script="open -a 'Mail'"
 )
 
 kakao=(
@@ -44,6 +45,7 @@ kakao=(
   padding_left=8
   update_freq=20
   script="$PLUGIN_DIR/noti_kakaotalk.sh"
+  click_script="open -a 'KakaoTalk'"
 )
 
 
