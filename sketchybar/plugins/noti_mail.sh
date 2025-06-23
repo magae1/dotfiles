@@ -13,4 +13,8 @@ else
     fi
 fi
 
+if [[ $LABEL = "" ]]; then
+  LABEL="0"
+fi
+
 sketchybar --set $NAME drawing=on label="${LABEL}"

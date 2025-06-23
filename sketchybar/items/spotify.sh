@@ -27,8 +27,10 @@ spotify_cover=(
 spotify_artist=(
   padding_left=0
   padding_right=8
+  max_chars=6
   y_offset=7
   label.font="SF Pro:SemiBold:8.0"
+  label.width=56
   click_script="open -a 'Spotify'"
 )
 
@@ -37,7 +39,7 @@ spotify_title=(
   padding_right=8
   y_offset=-5
   label.font="SF Pro:Bold:11.5"
-  background.padding_left=-40
+  background.padding_left=-71
   click_script="open -a 'Spotify'"
 )
 
